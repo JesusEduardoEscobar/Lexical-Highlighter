@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Análisis Léxico de C++ con Resaltado</title>
+    <style>
+        body {
+            font-family: Consolas, monospace;
+            background: #1E1E1E;
+            color: #D4D4D4;
+            padding: 20px;
+            line-height: 1.5;
+        }
+        pre {
+            padding: 15px;
+            background: #252526;
+            border-radius: 5px;
+            tab-size: 4;
+            white-space: pre;
+            overflow-x: auto;
+        }
+        .keyword {
+            color: #569CD6;
+            font-weight: bold;
+        }
+        .type {
+            color: #4EC9B0;
+        }
+        .operator {
+            color: #D4D4D4;
+        }
+        .number {
+            color: #B5CEA8;
+        }
+        .string, .char {
+            color: #CE9178;
+        }
+        .comment {
+            color: #6A9955;
+            font-style: italic;
+        }
+        .preprocessor {
+            color: #9B9B9B;
+            font-style: italic;
+        }
+        .function {
+            color: #DCDCAA;
+        }
+        .library {
+            color: #C586C0;
+        }
+        .identifier {
+            color: #D4D4D4;
+        }
+        span:hover {
+            outline: 1px solid #264F78;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body>
+    <pre><span class="preprocessor" style="background-color: rgba(155, 155, 155, 0.3);">#include</span>&nbsp;<span class="operator" style="background-color: rgba(212, 212, 212, 0.3);">&lt;</span><span class="identifier" style="background-color: rgba(212, 212, 212, 0.1);">iostream</span><span class="operator" style="background-color: rgba(212, 212, 212, 0.3);">&gt;</span>&nbsp;<br><span class="keyword" style="background-color: rgba(86, 156, 214, 0.3);">using</span>&nbsp;<span class="keyword" style="background-color: rgba(86, 156, 214, 0.3);">namespace</span>&nbsp;<span class="library" style="background-color: rgba(197, 134, 192, 0.3);">std</span><span style="background-color: rgba(244, 71, 71, 0.2);">;</span>&nbsp;<br>&nbsp;<br><span class="comment" style="background-color: rgba(106, 153, 85, 0.3);">// Función de ejemplo</span><br><span class="keyword" style="background-color: rgba(86, 156, 214, 0.3);">void</span>&nbsp;<span class="identifier" style="background-color: rgba(212, 212, 212, 0.1);">mostrarMensaje</span><span style="background-color: rgba(244, 71, 71, 0.2);">(</span><span style="background-color: rgba(244, 71, 71, 0.2);">)</span>&nbsp;<span style="background-color: rgba(244, 71, 71, 0.2);">{</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="function" style="background-color: rgba(220, 220, 170, 0.3);">cout</span>&nbsp;<span class="operator" style="background-color: rgba(212, 212, 212, 0.3);">&lt;&lt;</span>&nbsp;<span class="string" style="background-color: rgba(206, 145, 120, 0.3);">&quot;¡Bienvenido al analizador léxico de C++!&quot;</span>&nbsp;<span class="operator" style="background-color: rgba(212, 212, 212, 0.3);">&lt;&lt;</span>&nbsp;<span class="function" style="background-color: rgba(220, 220, 170, 0.3);">endl</span><span style="background-color: rgba(244, 71, 71, 0.2);">;</span>&nbsp;<br><span style="background-color: rgba(244, 71, 71, 0.2);">}</span>&nbsp;<br>&nbsp;<br><span class="keyword" style="background-color: rgba(86, 156, 214, 0.3);">int</span>&nbsp;<span class="function" style="background-color: rgba(220, 220, 170, 0.3);">main</span><span style="background-color: rgba(244, 71, 71, 0.2);">(</span><span style="background-color: rgba(244, 71, 71, 0.2);">)</span>&nbsp;<span style="background-color: rgba(244, 71, 71, 0.2);">{</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment" style="background-color: rgba(106, 153, 85, 0.3);">// Variables</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword" style="background-color: rgba(86, 156, 214, 0.3);">int</span>&nbsp;<span class="identifier" style="background-color: rgba(212, 212, 212, 0.1);">x</span>&nbsp;<span class="operator" style="background-color: rgba(212, 212, 212, 0.3);">=</span>&nbsp;<span class="number" style="background-color: rgba(181, 206, 168, 0.3);">10</span><span style="background-color: rgba(244, 71, 71, 0.2);">;</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword" style="background-color: rgba(86, 156, 214, 0.3);">float</span>&nbsp;<span class="identifier" style="background-color: rgba(212, 212, 212, 0.1);">y</span>&nbsp;<span class="operator" style="background-color: rgba(212, 212, 212, 0.3);">=</span>&nbsp;<span class="number" style="background-color: rgba(181, 206, 168, 0.3);">5.5</span><span style="background-color: rgba(244, 71, 71, 0.2);">;</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword" style="background-color: rgba(86, 156, 214, 0.3);">bool</span>&nbsp;<span class="identifier" style="background-color: rgba(212, 212, 212, 0.1);">esMayor</span>&nbsp;<span class="operator" style="background-color: rgba(212, 212, 212, 0.3);">=</span>&nbsp;<span class="keyword" style="background-color: rgba(86, 156, 214, 0.3);">false</span><span style="background-color: rgba(244, 71, 71, 0.2);">;</span>&nbsp;<br>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment" style="background-color: rgba(106, 153, 85, 0.3);">// Operadores aritméticos</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword" style="background-color: rgba(86, 156, 214, 0.3);">int</span>&nbsp;<span class="identifier" style="background-color: rgba(212, 212, 212, 0.1);">suma</span>&nbsp;<span class="operator" style="background-color: rgba(212, 212, 212, 0.3);">=</span>&nbsp;<span class="identifier" style="background-color: rgba(212, 212, 212, 0.1);">x</span>&nbsp;<span class="operator" style="background-color: rgba(212, 212, 212, 0.3);">+</span>&nbsp;<span class="identifier" style="background-color: rgba(212, 212, 212, 0.1);">y</span><span style="background-color: rgba(244, 71, 71, 0.2);">;</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword" style="background-color: rgba(86, 156, 214, 0.3);">int</span>&nbsp;<span class="identifier" style="background-color: rgba(212, 212, 212, 0.1);">multiplicacion</span>&nbsp;<span class="operator" style="background-color: rgba(212, 212, 212, 0.3);">=</span>&nbsp;<span class="identifier" style="background-color: rgba(212, 212, 212, 0.1);">x</span>&nbsp;<span class="operator" style="background-color: rgba(212, 212, 212, 0.3);">*</span>&nbsp;<span class="identifier" style="background-color: rgba(212, 212, 212, 0.1);">y</span><span style="background-color: rgba(244, 71, 71, 0.2);">;</span>&nbsp;<br>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment" style="background-color: rgba(106, 153, 85, 0.3);">// Operadores lógicos</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="identifier" style="background-color: rgba(212, 212, 212, 0.1);">esMayor</span>&nbsp;<span class="operator" style="background-color: rgba(212, 212, 212, 0.3);">=</span>&nbsp;<span style="background-color: rgba(244, 71, 71, 0.2);">(</span><span class="identifier" style="background-color: rgba(212, 212, 212, 0.1);">x</span>&nbsp;<span class="operator" style="background-color: rgba(212, 212, 212, 0.3);">&gt;</span>&nbsp;<span class="identifier" style="background-color: rgba(212, 212, 212, 0.1);">y</span><span style="background-color: rgba(244, 71, 71, 0.2);">)</span>&nbsp;<span class="operator" style="background-color: rgba(212, 212, 212, 0.3);">&amp;&amp;</span>&nbsp;<span style="background-color: rgba(244, 71, 71, 0.2);">(</span><span class="identifier" style="background-color: rgba(212, 212, 212, 0.1);">y</span>&nbsp;<span class="operator" style="background-color: rgba(212, 212, 212, 0.3);">!=</span>&nbsp;<span class="number" style="background-color: rgba(181, 206, 168, 0.3);">0</span><span style="background-color: rgba(244, 71, 71, 0.2);">)</span><span style="background-color: rgba(244, 71, 71, 0.2);">;</span>&nbsp;<br>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment" style="background-color: rgba(106, 153, 85, 0.3);">// Condicionales</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword" style="background-color: rgba(86, 156, 214, 0.3);">if</span>&nbsp;<span style="background-color: rgba(244, 71, 71, 0.2);">(</span><span class="identifier" style="background-color: rgba(212, 212, 212, 0.1);">esMayor</span><span style="background-color: rgba(244, 71, 71, 0.2);">)</span>&nbsp;<span style="background-color: rgba(244, 71, 71, 0.2);">{</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="function" style="background-color: rgba(220, 220, 170, 0.3);">cout</span>&nbsp;<span class="operator" style="background-color: rgba(212, 212, 212, 0.3);">&lt;&lt;</span>&nbsp;<span class="string" style="background-color: rgba(206, 145, 120, 0.3);">&quot;x es mayor que y&quot;</span>&nbsp;<span class="operator" style="background-color: rgba(212, 212, 212, 0.3);">&lt;&lt;</span>&nbsp;<span class="function" style="background-color: rgba(220, 220, 170, 0.3);">endl</span><span style="background-color: rgba(244, 71, 71, 0.2);">;</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span style="background-color: rgba(244, 71, 71, 0.2);">}</span>&nbsp;<span class="keyword" style="background-color: rgba(86, 156, 214, 0.3);">else</span>&nbsp;<span style="background-color: rgba(244, 71, 71, 0.2);">{</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="function" style="background-color: rgba(220, 220, 170, 0.3);">cout</span>&nbsp;<span class="operator" style="background-color: rgba(212, 212, 212, 0.3);">&lt;&lt;</span>&nbsp;<span class="string" style="background-color: rgba(206, 145, 120, 0.3);">&quot;x no es mayor que y&quot;</span>&nbsp;<span class="operator" style="background-color: rgba(212, 212, 212, 0.3);">&lt;&lt;</span>&nbsp;<span class="function" style="background-color: rgba(220, 220, 170, 0.3);">endl</span><span style="background-color: rgba(244, 71, 71, 0.2);">;</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span style="background-color: rgba(244, 71, 71, 0.2);">}</span>&nbsp;<br>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment" style="background-color: rgba(106, 153, 85, 0.3);">// Ciclo for</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword" style="background-color: rgba(86, 156, 214, 0.3);">for</span>&nbsp;<span style="background-color: rgba(244, 71, 71, 0.2);">(</span><span class="keyword" style="background-color: rgba(86, 156, 214, 0.3);">int</span>&nbsp;<span class="identifier" style="background-color: rgba(212, 212, 212, 0.1);">i</span>&nbsp;<span class="operator" style="background-color: rgba(212, 212, 212, 0.3);">=</span>&nbsp;<span class="number" style="background-color: rgba(181, 206, 168, 0.3);">0</span><span style="background-color: rgba(244, 71, 71, 0.2);">;</span>&nbsp;<span class="identifier" style="background-color: rgba(212, 212, 212, 0.1);">i</span>&nbsp;<span class="operator" style="background-color: rgba(212, 212, 212, 0.3);">&lt;</span>&nbsp;<span class="number" style="background-color: rgba(181, 206, 168, 0.3);">5</span><span style="background-color: rgba(244, 71, 71, 0.2);">;</span>&nbsp;<span class="identifier" style="background-color: rgba(212, 212, 212, 0.1);">i</span><span class="operator" style="background-color: rgba(212, 212, 212, 0.3);">++</span><span style="background-color: rgba(244, 71, 71, 0.2);">)</span>&nbsp;<span style="background-color: rgba(244, 71, 71, 0.2);">{</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="function" style="background-color: rgba(220, 220, 170, 0.3);">cout</span>&nbsp;<span class="operator" style="background-color: rgba(212, 212, 212, 0.3);">&lt;&lt;</span>&nbsp;<span class="string" style="background-color: rgba(206, 145, 120, 0.3);">&quot;Iteración: &quot;</span>&nbsp;<span class="operator" style="background-color: rgba(212, 212, 212, 0.3);">&lt;&lt;</span>&nbsp;<span class="identifier" style="background-color: rgba(212, 212, 212, 0.1);">i</span>&nbsp;<span class="operator" style="background-color: rgba(212, 212, 212, 0.3);">&lt;&lt;</span>&nbsp;<span class="function" style="background-color: rgba(220, 220, 170, 0.3);">endl</span><span style="background-color: rgba(244, 71, 71, 0.2);">;</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span style="background-color: rgba(244, 71, 71, 0.2);">}</span>&nbsp;<br>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment" style="background-color: rgba(106, 153, 85, 0.3);">// Llamar a la función</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="identifier" style="background-color: rgba(212, 212, 212, 0.1);">mostrarMensaje</span><span style="background-color: rgba(244, 71, 71, 0.2);">(</span><span style="background-color: rgba(244, 71, 71, 0.2);">)</span><span style="background-color: rgba(244, 71, 71, 0.2);">;</span>&nbsp;<br>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword" style="background-color: rgba(86, 156, 214, 0.3);">return</span>&nbsp;<span class="number" style="background-color: rgba(181, 206, 168, 0.3);">0</span><span style="background-color: rgba(244, 71, 71, 0.2);">;</span>&nbsp;<br><span style="background-color: rgba(244, 71, 71, 0.2);">}</span></pre>
+</body>
+</html>
