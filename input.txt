@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+
+// Función de ejemplo
+void mostrarMensaje() {
+    cout << "¡Bienvenido al analizador léxico de C++!" << endl;
+}
+
+int main() {
+    // Variables
+    int x = 10;
+    float y = 5.5;
+    bool esMayor = false;
+
+    // Operadores aritméticos
+    int suma = x + y;
+    int multiplicacion = x * y;
+
+    // Operadores lógicos
+    esMayor = (x > y) && (y != 0);
+
+    // Condicionales
+    if (esMayor) {
+        cout << "x es mayor que y" << endl;
+    } else {
+        cout << "x no es mayor que y" << endl;
+    }
+
+    // Ciclo for
+    for (int i = 0; i < 5; i++) {
+        cout << "Iteración: " << i << endl;
+    }
+
+    // Llamar a la función
+    mostrarMensaje();
+
+    return 0;
+}
