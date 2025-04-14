@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 #include <iostream>
 using namespace std;
 
@@ -37,6 +38,8 @@ int main() {
 
     return 0;
 =======
+=======
+>>>>>>> b9afa87cd0c9b51dea80b65145bda6be2adb997c
 #include <iostream>
 using namespace std;
 
@@ -74,5 +77,8 @@ int main() {
     mostrarMensaje();
 
     return 0;
+<<<<<<< HEAD
 >>>>>>> 146c3c9 (Primer envio)
+=======
+>>>>>>> b9afa87cd0c9b51dea80b65145bda6be2adb997c
 }
